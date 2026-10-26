@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Dashboard - University Student Support System</title>
+
+</head>
+<body>
+<!-- Top bar -->
+<header>
+<a href="admin-dashboard.html">
+<img src="images/logo.png" alt="University logo" width="48" height="48">
+<strong>University Student Support System</strong>
+</a>
+<div>
+<button type="button" aria-label="Notifications (new)"></button>
+<button type="button" aria-label="Account menu">
+<img src="" alt="" width="40" height="40">
+       Admin
+</button>
+</div>
+</header>
+<!-- Sidebar -->
+<aside>
+<nav aria-label="Admin menu">
+<ul>
+<li><a href="admin-dashboard.html" aria-current="page">Dashboard</a></li>
+<li><a href="all-reports.html">All Reports</a></li>
+<li><a href="manage-reports.html">Manage Reports</a></li>
+<li><a href="users.html">Users</a></li>
+<li><a href="universities.html">Universities</a></li>
+<li><a href="settings.html">Settings</a></li>
+</ul>
+</nav>
+<a href="logout.html">Logout</a>
+</aside>
+<main>
+<!-- Welcome banner -->
+<section aria-labelledby="welcome-title">
+<div>
+<h1 id="welcome-title">Hello, Admin!</h1>
+<p>Welcome to the University Student Support System.</p>
+<p>Here you can view and manage student reports, track their progress, and help improve the campus experience.</p>
+</div>
+<img src="images/campus-illustration.png" alt="Illustration of a university building" width="300" height="160">
+</section>
+<!-- Stats -->
+<section aria-label="Report statistics">
+<article>
+<span aria-hidden="true"></span>
+<h2>Pending</h2>
+
+<p>Waiting for review</p>
+</article>
+<h2>Total Reports</h2>
+
+<p>All submitted reports</p>
+</article>
+<article>
+<span aria-hidden="true"></span>
+<h2>Pending</h2>
+
+<p>Waiting for review</p>
+</article>
+<article>
+<span aria-hidden="true"></span>
+<h2>In Progress</h2>
+
+<p>Being processed</p>
+</article>
+<article>
+<span aria-hidden="true"></span>
+<h2>Resolved</h2>
+
+<p>Successfully solved</p>
+</article>
+</section>
+<div>
+
+
+<!-- Recent reports -->
+<section aria-labelledby="recent-title">
+<header>
+<h2 id="recent-title">Recent Reports</h2>
+<a href="all-reports.html">View All</a>
+</header>
+<table>
+<thead>
+<tr>
+<th scope="col">#</th>
+<th scope="col">Title</th>
+<th scope="col">Category</th>
+<th scope="col">Status</th>
+<th scope="col">Date</th>
+<th scope="col">Actions</th>
+</tr>
+</thead>
+
+</table>
+</section>
+
+
+<!-- Quick actions -->
+<aside aria-labelledby="actions-title">
+<h2 id="actions-title">Quick Actions</h2>
+<ul>
+<li>
+<a href="all-reports.html">
+<strong>View All Reports</strong>
+<span>Check and manage reports</span>
+</a>
+</li>
+<li>
+<a href="users.html">
+<strong>Manage Users</strong>
+<span>View student and admin accounts</span>
+</a>
+</li>
+</ul>
+<div>
+<label for="university"><strong>University</strong></label>
+<select id="university" name="university">
+<option selected>American International University - Bangladesh</option>
+</select>
+<p>You can now manage reports for the selected university.</p>
+</div>
+</aside>
+</div>
+</main>
+</body>
+</html>
