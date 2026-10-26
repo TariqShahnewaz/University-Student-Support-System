@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report Details - University Student Support System</title>
+    
+</head>
+<body>
+
+    
+    <aside>
+        <a href="dashboard.html">
+            <img src="https://images.seeklogo.com/logo-png/61/2/aiub-logo-png_seeklogo-619631.png" alt="University logo" width="48" height="48">
+            <b>University Student Support System</b>
+        </a>
+
+        <nav aria-label="Main menu">
+            <ul>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="report-problem.html">Report a Problem</a></li>
+                <li><a href="my-reports.html">My Reports</a></li>
+                <li><a href="report-details.html" aria-current="page">Report Details</a></li>
+                <li><a href="settings.html">Settings</a></li>
+            </ul>
+        </nav>
+
+        <a href="logout.html">Logout</a>
+    </aside>
+
+    <div>
+        
+        <header>
+            <div>
+                <img src="data:image/png;base64,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" alt="" width="32" height="32">
+
+                <label for="university" hidden>University</label>
+                <select id="university" name="university">
+                    <option selected>American International University - Bangladesh</option>
+                </select>
+            </div>
+
+            <div>
+                <button type="button" aria-label="Notifications (new)"></button>
+
+                <button type="button" aria-label="Account menu">
+                    <img src="https://media.istockphoto.com/id/1300845620/vector/user-icon-flat-isolated-on-white-background-user-symbol-vector-illustration.jpg?s=612x612&w=0&k=20&c=yBeyba0hUkh14_jgv1OKqIH0CCSWU_4ckRkAoy2p73o=" alt="" width="40" height="40">
+                    tahsin Hassan Shovon
+                </button>
+            </div>
+        </header>
+
+        <main>
+            <p><a href="my-reports.html">Back to My Reports</a></p>
+
+            
+            <div>
+                <div>
+                    <h1>Report Details</h1>
+                    <p>View detailed information about your submitted report.</p>
+                </div>
+
+                <a href="edit-report.html">Edit Report</a>
+            </div>
+
+            <div>
+                
+                <div>
+                    <header>
+                        <img src="images/streetlight.png" alt="Street light icon" width="112" height="112">
+
+                        <div>
+                            <h2>Street Light Not Working</h2>
+                            <p>Electrical</p>
+
+                            <ul>
+                                <li>Location: Main Gate</li>
+                                <li><time datetime="2025-04-10">Apr 10, 2025</time></li>
+                                <li>Report ID: #R-00124</li>
+                            </ul>
+                        </div>
+                    </header>
+
+                    <hr>
+
+                    <div>
+                        <h3>Problem Description</h3>
+                        <p>
+                            The street light near the main gate is not working properly.
+                            It has been out for the last few days and it gets very dark
+                            at night. This creates safety concerns for students,
+                            especially when walking back to the hostel.
+                        </p>
+                    </div>
+
+                    <div>
+                        <h3>Suggested Solution</h3>
+                        <p>
+                            Please repair or replace the faulty light. The maintenance
+                            team should check the wiring and fix the issue as soon as possible.
+                        </p>
+                    </div>
+
+                    <div>
+                        <div>
+                            <h3>Reported By</h3>
+                            <p><b>Tahsin Hassan Shovon</b></p>
+                            <p>Student ID: 23102045</p>
+                            <p>Email: <a href="mailto:shovon@example.com">tariq@example.com</a></p>
+                        </div>
+
+                        <div>
+                            <h3>University</h3>
+                            <p>American International University - Bangladesh</p>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <aside aria-label="Report progress">
+
+                    <div>
+                        <h2>Current Status</h2>
+                        <p><b>In Progress</b></p>
+                        <p>
+                            Your report is currently being reviewed by the relevant department.
+                        </p>
+                    </div>
+
+                    <div>
+                        <h2>Progress Timeline</h2>
+
+                        <ol>
+                            <li>
+                                <h3>Submitted</h3>
+                                
+                            </li>
+
+                            <li>
+                                <h3>In Progress</h3>
+                                
+                                
+                            </li>
+
+                            <li>
+                                <h3>Resolved</h3>
+                            
+                                <p>Pending</p>
+                            </li>
+                        </ol>
+                    </div>
+
+                    <div>
+                        <h2>Report History</h2>
+
+                        <ul>
+                            <li>
+                                
+                                <p>In Progress</p>
+                            </li>
+
+                            <li>
+                            
+                                <p>Report submitted</p>
+                            </li>
+                        </ul>
+                    </div>
+
+                </aside>
+            </div>
+        </main>
+    </div>
+
+</body>
+</html>
