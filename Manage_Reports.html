@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Reports - University Student Support System</title>
+    <!-- Add later: <link rel="stylesheet" href="style.css"> -->
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <aside>
+        <a href="admin-dashboard.html">
+            <img src="images/logo.png" alt="University logo" width="48" height="48">
+            <strong>University Student Support System</strong>
+        </a>
+        <nav aria-label="Admin menu">
+            <ul>
+                <li><a href="admin-dashboard.html">Dashboard</a></li>
+                <li><a href="manage-reports.html" aria-current="page">Manage Reports</a></li>
+                <li><a href="admin-profile.html">My Profile</a></li>
+
+            </ul>
+        </nav>
+        <a href="logout.html">Logout</a>
+    </aside>
+    <div>
+
+        <!-- Top bar -->
+        <header>
+            <div>
+                <img src="" alt="" width="32" height="32">
+                <label for="university" hidden>University</label>
+                <select id="university" name="university">
+                    <option selected>American International University - Bangladesh</option>
+                </select>
+            </div>
+            <div>
+                <button type="button" aria-label="Notifications (new)"></button>
+                <button type="button" aria-label="Account menu">
+                    <img src="" alt="" width="40" height="40">
+
+                    Admin
+                </button>
+            </div>
+        </header>
+        <main>
+
+            <section>
+                <h1>Manage Reports</h1>
+                <p>View, filter and manage all submitted reports.</p>
+            </section>
+
+            <section aria-label="Report statistics">
+                <article>
+                    <h2>Total Reports</h2>
+                </article>
+                <article>
+                    <h2>Pending</h2>
+                </article>
+                <article>
+                    <h2>In Progress</h2>
+                </article>
+                <article>
+                    <h2>Resolved</h2>
+                </article>
+            </section>
+
+            <!-- Search and filters -->
+            <form action="#" method="get" role="search">
+                <label for="search" hidden>Search reports</label>
+                <input type="search" id="search" name="q" placeholder="Search by title, location or category...">
+                <label for="category" hidden>Category</label>
+                <select id="category" name="category">
+                    <option value="">All Categories</option>
+                    <option value="classroom">Classroom</option>
+                    <option value="parking">Parking</option>
+                    <option value="roads">Roads</option>
+                    <option value="sports">Sports</option>
+                    <option value="library">Library</option>
+                    <option value="other">Other</option>
+                </select>
+                <label for="status" hidden>Status</label>
+                <select id="status" name="status">
+                    <option value="">All Status</option>
+                    <option value="pending">Pending</option>
+                    <option value="in-progress">In Progress</option>
+                    <option value="resolved">Resolved</option>
+                </select>
+                <button type="submit">Filter</button>
+            </form>
+
+            <!-- Reports table -->
+            <section aria-labelledby="reports-title">
+                <h2 id="reports-title">All Reports</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Title</th>
+                            <th scope="col">Category</th>
+                            <th scope="col">Location</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                </table>
+            </section>
+        </main>
+    </div>
+</body>
+
+</html>
