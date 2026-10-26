@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Report a Problem | Universal Student Support System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1 class="e">Universal Student Support System</h1>
+        <p align="center" class="f">American International University - Bangladesh</p>
+        <hr>
+        <nav class="nav" aria-label="Main navigation">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="report.html" aria-current="page">Report</a>
+            <a href="profile.html">Student Profile</a>
+        </nav>
+        <hr>
+    </header>
+
+    <main>
+        <section>
+            <h2>Report a Problem</h2>
+            <p>Use this form to report an issue on campus. Please provide clear and accurate information so the support
+                team can understand the problem.</p>
+
+            <form action="#" method="post">
+                <fieldset>
+                    <legend>Problem Information</legend>
+
+                    <p>
+                        <label for="report-title">Report Title (required)</label><br>
+                        <input type="text" id="report-title" name="report-title"
+                            placeholder="Example: Broken light in D building" required>
+                    </p>
+
+                    <p>
+                        <label for="category">Category (required)</label><br>
+                        <select id="category" name="category" required>
+                            <option value="">Select a category</option>
+                            <option value="infrastructure">Infrastructure</option>
+                            <option value="maintenance">Maintenance</option>
+                            <option value="food-dining">Food &amp; Dining</option>
+                            <option value="academic">Academic</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </p>
+
+                    <p>
+                        <label for="location">Location (required)</label><br>
+                        <select id="location" name="location" required>
+                            <option value="">Select a location</option>
+                            <option value="building-a">A Building</option>
+                            <option value="building-b">B Building</option>
+                            <option value="building-c">C Building</option>
+                            <option value="building-d">D Building</option>
+                            <option value="canteen">Canteen</option>
+                            <option value="library">Library</option>
+                            <option value="other-location">Other</option>
+                        </select>
+                    </p>
+
+                    <p>
+                        <label for="description">Problem Description (required)</label><br>
+                        <textarea id="description" name="description" rows="5" cols="50"
+                            placeholder="Explain what happened and where the problem can be found." required></textarea>
+                    </p>
+
+                    <p>
+                        <label for="solution">Suggested Solution (optional)</label><br>
+                        <textarea id="solution" name="solution" rows="3" cols="50"
+                            placeholder="If you have a suggestion, write it here."></textarea>
+                    </p>
+                </fieldset>
+
+                <p>
+                    <button type="submit">Submit Report</button>
+                    <button type="reset">Clear Form</button>
+                </p>
+            </form>
+
+            <p><strong>Note:</strong> This is a front-end demonstration. The form will not save or send a report until a
+                backend service is connected.</p>
+        </section>
+    </main>
+    <center>
+        <hr>
+        <footer>
+            <p><a href="https://media.gifdb.com/spider-man-knitting-web-cljnw79qfpjh6gce.gif">🕸️🕷️🕸️</a>
+            </p>
+            <p>😊🤦‍♀️😊</p>
+            <p>&copy; 2026 Universal Student Support System</p>
+            <p>Student support made simpler.</p>
+        </footer>
+    </center>
+</body>
+
+</html>
