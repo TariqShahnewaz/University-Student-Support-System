@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Profile - University Student Support System</title>
+
+</head>
+<body>
+<!-- Sidebar -->
+<aside>
+<a href="admin-dashboard.html">
+<img src="" alt="University logo" width="48" height="48">
+<strong>University Student Support System</strong>
+</a>
+<nav aria-label="Admin menu">
+<ul>
+<li><a href="admin-dashboard.html">Dashboard</a></li>
+<li><a href="manage-reports.html">Manage Reports</a></li>
+<li><a href="admin-profile.html" aria-current="page">My Profile</a></li>
+
+</ul>
+</nav>
+<a href="logout.html">Logout</a>
+</aside>
+<div>
+<!-- Top bar -->
+<header>
+<div>
+<img src="" alt="" width="32" height="32">
+<label for="university" hidden>University</label>
+<select id="university" name="university">
+<option selected>American International University - Bangladesh</option>
+</select>
+</div>
+<div>
+<button type="button" aria-label="Notifications (new)"></button>
+<button type="button" aria-label="Account menu">
+<img src="" alt="" width="40" height="40">
+         Admin
+</button>
+</div>
+</header>
+<main>
+<!-- Page heading -->
+<section>
+<h1>Admin Profile</h1>
+<p>View and update your personal information.</p>
+</section>
+<div>
+<!-- Profile card -->
+<article aria-labelledby="profile-name">
+<figure>
+<img src="images/avatar.png" alt="Profile photo" width="120" height="120">
+<!-- Change photo button needs JavaScript or a backend later -->
+<button type="button" aria-label="Change profile photo"></button>
+</figure>
+<h2 id="profile-name">Tariq Shahnewaz Al-Riyadh</h2>
+<p>Administrator</p>
+<hr>
+<dl>
+<dt>Email Address</dt>
+<dd><a href="mailto:tariq@example.com">tariq@example.com</a></dd>
+<dt>Full Name</dt>
+<dd>Tariq Shahnewaz Al-Riyadh</dd>
+<dt>University</dt>
+<dd>American International University - Bangladesh</dd>
+<dt>Joined Date</dt>
+<dd><time datetime="2025-01-15">January 15, 2025</time></dd>
+</dl>
+<a href="edit-profile.html">Edit Profile</a>
+</article>
+<div>
+<!-- Quick actions -->
+<section aria-labelledby="actions-title">
+<h2 id="actions-title">Quick Actions</h2>
+<ul>
+<li>
+<a href="change-password.html">
+<strong>Change Password</strong>
+<span>Update your account password</span>
+</a>
+</li>
+<li>
+<a href="notification-settings.html">
+<strong>Notification Settings</strong>
+<span>Manage your notifications</span>
+</a>
+</li>
+</ul>
+</section>
+<!-- About me -->
+<section aria-labelledby="about-title">
+<h2 id="about-title">About Me</h2>
+<div>
+<p>I am the administrator of the University Student Support System. I manage reports and ensure the smooth operation of the platform.</p>
+<img src="images/bio-illustration.png" alt="" width="100" height="100">
+</div>
+<a href="edit-bio.html">Add Bio</a>
+</section>
+</div>
+</div>
+</main>
+</div>
+</body>
+</html>
