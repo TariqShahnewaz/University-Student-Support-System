@@ -2,96 +2,68 @@
 <html lang="en">
 
 <head>
-    <title>Student Profile | Universal Student Support System</title>
+
+    <title>Student Profile</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <header>
-        <h1 class="e">Universal Student Support System</h1>
-        <p align="center" class="f">American International University - Bangladesh</p>
-        <hr>
-        <nav class="nav" aria-label="Main navigation">
-            <a class="R" href="dashboard.html">Dashboard</a>
-            <a class="B" href="report.html">Report</a>
-            <a class="R" href="profile.html" aria-current="page">Student Profile</a>
+    <aside class="sidebar">
+        <div class="logo">
+            <div class="logo-icon">🏛️</div>
+            <h2>University Student<br>Support System</h2>
+        </div>
+        <nav>
+            <a class="menu-link" href="index.html">🏠 <span>Dashboard</span></a>
+            <a class="menu-link" href="report.html">➕ <span>Report a Problem</span></a>
+            <a class="menu-link active" href="profile.html">👤 <span>Profile</span></a>
         </nav>
-        <hr>
-    </header>
+        <button class="logout" onclick="showMessage('Logout button clicked')">↪️ Logout</button>
+    </aside>
 
-    <main>
-        <section>
-            <h2>Student Profile</h2>
-            <p>View your student information and manage your profile details.</p>
-
-            <h3>Personal Information</h3>
-            <table border="1" cellpadding="8">
-                <tbody>
-                    <tr>
-                        <th scope="row">Full Name</th>
-                        <td>MD. NIHAL ABRAR</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Role</th>
-                        <td>Student</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Email Address</th>
-                        <td><a href="mailto:nihalabrar@gmail.com">nihalabrar@gmail.com</a></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">University</th>
-                        <td>American International University - Bangladesh (AIUB)</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-
-        <section>
-            <h3>Quick Actions</h3>
-            <ul>
-                <li><a href="#edit-profile">Edit Profile</a></li>
-                <li><a href="#change-password">Change Password</a></li>
-                <li><a href="#notification-settings">Notification Settings</a></li>
-            </ul>
-            <p><strong>Demo note:</strong> These links are placeholders for future features. No account settings are
-                changed on this page.</p>
-        </section>
-
-        <section id="edit-profile">
-            <h3>About Me</h3>
-            <form action="#" method="post">
-                <p>
-                    <label for="about-me">Write a short introduction</label><br>
-                    <textarea id="about-me" name="about-me" rows="4" cols="50"
-                        placeholder="Write a few sentences about yourself."></textarea>
-                </p>
-                <button type="submit">Save Bio</button>
-                <button type="reset">Clear</button>
-            </form>
-            <p><strong>Note:</strong> This demonstration form does not save information permanently.</p>
-        </section>
-
-        <section id="change-password">
-            <h3>Change Password</h3>
-            <p>Password changes are not available in this front-end demonstration.</p>
-        </section>
-
-        <section id="notification-settings">
-            <h3>Notification Settings</h3>
-            <p>Notification preferences are not available in this front-end demonstration.</p>
-        </section>
+    <main class="main-content">
+        <header class="topbar">
+            <div>🏛️ <b>American International University - Bangladesh</b></div>
+            <div>🔔 &nbsp; 👤 <b>MD. NIHAL ABRAR</b> ▾</div>
+        </header>
+        <div class="content">
+            <div class="page-title"><span>👤</span>
+                <div>
+                    <h1>Student Profile</h1>
+                    <p>View and update your personal information.</p>
+                </div>
+            </div>
+            <div class="profile-layout">
+                <section class="white-card profile-card">
+                    <div class="big-avatar">👤</div>
+                    <h2>MD. NIHAL ABRAR</h2><span class="student-badge">Student</span>
+                    <hr>
+                    <p>✉️ <b>Email Address</b><br><span>nihal.abrar@example.com</span></p>
+                    <p>👤 <b>Full Name</b><br><span>MD. NIHAL ABRAR</span></p>
+                    <p>🏛️ <b>University</b><br><span>American International University - Bangladesh</span></p><button
+                        class="outline-button" onclick="showMessage('Profile edit option selected')">✏️ Edit
+                        Profile</button>
+                </section>
+                <div>
+                    <section class="white-card">
+                        <h2>⚡ Quick Actions</h2><button class="profile-action"
+                            onclick="showMessage('Change password option selected')">🔒 <span><b>Change
+                                    Password</b><small>Update your account password</small></span>➜</button><button
+                            class="profile-action" onclick="showMessage('Notification settings selected')">🔔
+                            <span><b>Notification Settings</b><small>Manage your notifications</small></span>➜</button>
+                    </section>
+                    <section class="white-card about-box">
+                        <h2>ⓘ About Me</h2>
+                        <p><b>No additional information added yet.</b><br><small>You can add a short bio about
+                                yourself.</small></p><button class="outline-button"
+                            onclick="showMessage('Bio option selected')">✏️ Add Bio</button>
+                    </section>
+                </div>
+            </div>
+        </div>
     </main>
-    <center>
-        <hr>
-        <footer>
-            <p><a href="https://media.gifdb.com/spider-man-knitting-web-cljnw79qfpjh6gce.gif">🕸️🕷️🕸️</a>
-            </p>
-            <p>😊🤦‍♀️😊</p>
-            <p>&copy; 2026 Universal Student Support System</p>
-            <p>For assistance, contact the university support team.</p>
-        </footer>
-    </center>
+    <div id="message" class="message"></div>
+    <script src="script.js"></script>
 </body>
 
 </html>

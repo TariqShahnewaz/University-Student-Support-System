@@ -1,0 +1,621 @@
+:root {
+    --dark-blue: #123d73;
+    --blue: #1478ee;
+    --text: #173e73;
+    --gray: #5875a5;
+    --border: #d7e6f6;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: var(--text);
+    background: #f5f9ff;
+}
+
+/*ata left sidebar */
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    padding: 22px 12px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: linear-gradient(#10396f, #17457f);
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding: 0 14px 30px;
+}
+
+.logo-icon {
+    font-size: 38px;
+}
+
+.logo h2 {
+    font-size: 17px;
+    line-height: 1.3;
+    margin: 0;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.menu-link,
+.logout {
+    border: 0;
+    border-radius: 8px;
+    padding: 14px;
+    text-align: left;
+    color: white;
+    background: transparent;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.menu-link span {
+    margin-left: 12px;
+}
+
+.menu-link:hover,
+.menu-link.active {
+    background: #2579df;
+}
+
+.logout {
+    margin-top: auto;
+    border-top: 1px solid #ffffff55;
+    border-radius: 0;
+    padding-top: 22px;
+}
+
+/* atate top bar and page area */
+.main-content {
+    margin-left: 250px;
+    min-height: 100vh;
+}
+
+.topbar {
+    min-height: 76px;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+    border-bottom: 1px solid var(--border);
+}
+
+.content {
+    padding: 28px 32px 50px;
+    max-width: 1500px;
+    margin: auto;
+}
+
+.white-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 8px 25px #295e9912;
+}
+
+.white-card h2 {
+    margin-top: 0;
+}
+
+/* ata dashboard */
+.welcome-box {
+    min-height: 188px;
+    padding: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: #eaf4ff;
+}
+
+.welcome-box h1 {
+    margin: 0 0 8px;
+    font-size: 30px;
+}
+
+.welcome-box p {
+    margin: 8px 0;
+    color: var(--gray);
+    font-size: 17px;
+}
+
+.school-picture {
+    font-size: 105px;
+    padding: 20px 55px;
+    opacity: .75;
+}
+
+.number-boxes {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin: 20px 0 28px;
+}
+
+.number-box {
+    min-height: 175px;
+    padding: 20px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: white;
+}
+
+.number-box>span {
+    font-size: 31px;
+}
+
+.number-box p {
+    color: var(--gray);
+    margin: 13px 0 0;
+}
+
+.number-box h2 {
+    font-size: 32px;
+    margin: 10px 0;
+}
+
+.number-box small {
+    color: var(--gray);
+}
+
+.bottom-grid {
+    display: grid;
+    grid-template-columns: .9fr 1.5fr;
+    gap: 20px;
+}
+
+.large-action {
+    width: 100%;
+    min-height: 92px;
+    margin-top: 15px;
+    padding: 18px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    background: white;
+    color: var(--text);
+    cursor: pointer;
+    text-align: left;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.large-action span {
+    flex: 1;
+}
+
+.large-action b,
+.large-action small {
+    display: block;
+}
+
+.large-action b {
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.large-action small {
+    color: var(--gray);
+    font-size: 14px;
+}
+
+.blue-action {
+    color: white;
+    background: var(--blue);
+}
+
+.blue-action small {
+    color: white;
+}
+
+.card-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-title a {
+    color: var(--blue);
+    text-decoration: none;
+}
+
+/*ata table */
+.table-scroll {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px;
+}
+
+th,
+td {
+    padding: 15px 7px;
+    border-bottom: 1px solid #e3edf8;
+    text-align: left;
+    font-size: 14px;
+}
+
+th {
+    background: #f4f8ff;
+}
+
+.category,
+.status {
+    padding: 7px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.category {
+    background: #e5f0ff;
+    color: #2273d5;
+}
+
+.purple {
+    background: #eee5ff;
+    color: #713cdf;
+}
+
+.pink {
+    background: #ffe1eb;
+    color: #eb4d77;
+}
+
+.status.pending,
+.status.progress {
+    background: #fff0cf;
+    color: #d58a00;
+}
+
+.status.resolved {
+    background: #d9f5e5;
+    color: #0b9c5b;
+}
+
+/* Common page heading */
+.page-title {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin: 3px 4px 25px;
+}
+
+.page-title>span {
+    width: 60px;
+    height: 60px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: #dfedff;
+    font-size: 30px;
+}
+
+.page-title h1 {
+    margin: 0 0 7px;
+    font-size: 30px;
+}
+
+.page-title p {
+    margin: 0;
+    color: var(--gray);
+    font-size: 17px;
+}
+
+/* Report page */
+.report-form {
+    display: grid;
+    gap: 22px;
+}
+
+.report-form label {
+    display: grid;
+    gap: 8px;
+    font-weight: bold;
+}
+
+.report-form label b {
+    color: red;
+}
+
+.report-form label span {
+    color: var(--gray);
+    font-weight: normal;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #c9dcf4;
+    border-radius: 8px;
+    background: white;
+    color: var(--text);
+    font: inherit;
+}
+
+.report-form input,
+.report-form select {
+    height: 52px;
+}
+
+.report-form textarea {
+    min-height: 135px;
+    resize: vertical;
+}
+
+.two-column {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+}
+
+.cancel-button,
+.submit-button,
+.outline-button {
+    padding: 13px 23px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.cancel-button {
+    border: 0;
+    color: var(--text);
+    background: #edf3fb;
+}
+
+.submit-button {
+    border: 0;
+    color: white;
+    background: var(--blue);
+}
+
+.outline-button {
+    border: 1px solid var(--blue);
+    color: var(--blue);
+    background: white;
+}
+
+/*ata profile page */
+.profile-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.35fr;
+    gap: 20px;
+}
+
+.profile-card {
+    text-align: center;
+}
+
+.big-avatar {
+    width: 115px;
+    height: 115px;
+    margin: auto;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: #e2efff;
+    font-size: 60px;
+}
+
+.profile-card h2 {
+    margin-bottom: 10px;
+}
+
+.student-badge {
+    padding: 7px 18px;
+    border-radius: 20px;
+    color: var(--blue);
+    background: #e4f0ff;
+}
+
+.profile-card hr {
+    border: 0;
+    border-top: 1px solid var(--border);
+    margin: 25px 0;
+}
+
+.profile-card p {
+    text-align: left;
+    line-height: 1.7;
+}
+
+.profile-card p span {
+    color: var(--gray);
+    margin-left: 28px;
+}
+
+.profile-card .outline-button {
+    width: 100%;
+    margin-top: 12px;
+}
+
+.profile-action {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 18px;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    background: white;
+    color: var(--text);
+    text-align: left;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.profile-action+.profile-action {
+    margin-top: 15px;
+}
+
+.profile-action span {
+    flex: 1;
+}
+
+.profile-action b,
+.profile-action small {
+    display: block;
+}
+
+.profile-action b {
+    font-size: 16px;
+    margin-bottom: 7px;
+}
+
+.profile-action small {
+    color: var(--gray);
+    font-size: 13px;
+}
+
+.about-box {
+    margin-top: 20px;
+}
+
+.about-box p {
+    padding: 20px;
+    background: #f5f9ff;
+    line-height: 1.7;
+    color: var(--gray);
+}
+
+.message {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    padding: 14px 18px;
+    border-radius: 8px;
+    color: white;
+    background: var(--dark-blue);
+    display: none;
+}
+
+.message.show {
+    display: block;
+}
+
+@media (max-width:1000px) {
+    .number-boxes {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .bottom-grid,
+    .profile-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width:700px) {
+    .sidebar {
+        width: 190px;
+    }
+
+    .main-content {
+        margin-left: 190px;
+    }
+
+    .topbar {
+        min-height: 70px;
+        padding: 15px;
+        font-size: 12px;
+    }
+
+    .topbar div:last-child {
+        display: none;
+    }
+
+    .content {
+        padding: 18px 12px;
+    }
+
+    .welcome-box {
+        padding: 20px;
+    }
+
+    .welcome-box h1 {
+        font-size: 24px;
+    }
+
+    .welcome-box p {
+        font-size: 14px;
+    }
+
+    .school-picture {
+        display: none;
+    }
+
+    .number-boxes {
+        gap: 10px;
+    }
+
+    .number-box {
+        min-height: 145px;
+        padding: 15px;
+    }
+
+    .number-box h2 {
+        font-size: 26px;
+    }
+
+    .two-column {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .page-title h1 {
+        font-size: 24px;
+    }
+
+    .page-title p {
+        font-size: 14px;
+    }
+
+    .page-title>span {
+        width: 48px;
+        height: 48px;
+        font-size: 23px;
+    }
+
+    .form-buttons {
+        gap: 10px;
+    }
+
+    .cancel-button,
+    .submit-button {
+        padding: 12px 14px;
+    }
+}

@@ -2,98 +2,66 @@
 <html lang="en">
 
 <head>
-    <title>Report a Problem | Universal Student Support System</title>
+    <title>Report a Problem</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <header>
-        <h1 class="e">Universal Student Support System</h1>
-        <p align="center" class="f">American International University - Bangladesh</p>
-        <hr>
-        <nav class="nav" aria-label="Main navigation">
-            <a href="dashboard.html">Dashboard</a>
-            <a href="report.html" aria-current="page">Report</a>
-            <a href="profile.html">Student Profile</a>
+    <aside class="sidebar">
+        <div class="logo">
+            <div class="logo-icon">🏛️</div>
+            <h2>University Student<br>Support System</h2>
+        </div>
+        <nav>
+            <a class="menu-link" href="index.html">🏠 <span>Dashboard</span></a>
+            <a class="menu-link active" href="report.html">➕ <span>Report a Problem</span></a>
+            <a class="menu-link" href="profile.html">👤 <span>Profile</span></a>
         </nav>
-        <hr>
-    </header>
+        <button class="logout" onclick="showMessage('Logout button clicked')">↪️ Logout</button>
+    </aside>
 
-    <main>
-        <section>
-            <h2>Report a Problem</h2>
-            <p>Use this form to report an issue on campus. Please provide clear and accurate information so the support
-                team can understand the problem.</p>
-
-            <form action="#" method="post">
-                <fieldset>
-                    <legend>Problem Information</legend>
-
-                    <p>
-                        <label for="report-title">Report Title (required)</label><br>
-                        <input type="text" id="report-title" name="report-title"
-                            placeholder="Example: Broken light in D building" required>
+    <main class="main-content">
+        <header class="topbar">
+            <div>🏛️ <b>University Student Support System</b></div>
+            <div>🔔 &nbsp; 👤 <b>MD. NIHAL ABRAR</b> ▾</div>
+        </header>
+        <div class="content">
+            <div class="page-title"><span>➕</span>
+                <div>
+                    <h1>Report a Problem</h1>
+                    <p>Help make our campus better. Share the problem, suggest a solution, and let your university know.
                     </p>
-
-                    <p>
-                        <label for="category">Category (required)</label><br>
-                        <select id="category" name="category" required>
+                </div>
+            </div>
+            <form id="reportForm" class="white-card report-form">
+                <label>Title <b>*</b><input id="title" type="text"
+                        placeholder="E.g. Water leakage in C building"></label>
+                <div class="two-column"><label>Category <b>*</b><select id="category">
                             <option value="">Select a category</option>
-                            <option value="infrastructure">Infrastructure</option>
-                            <option value="maintenance">Maintenance</option>
-                            <option value="food-dining">Food &amp; Dining</option>
-                            <option value="academic">Academic</option>
-                            <option value="other">Other</option>
-                        </select>
-                    </p>
-
-                    <p>
-                        <label for="location">Location (required)</label><br>
-                        <select id="location" name="location" required>
+                            <option>Infrastructure</option>
+                            <option>Maintenance</option>
+                            <option>Food & Dining</option>
+                            <option>Academic</option>
+                        </select></label><label>Location <b>*</b><select id="location">
                             <option value="">Select a location</option>
-                            <option value="building-a">A Building</option>
-                            <option value="building-b">B Building</option>
-                            <option value="building-c">C Building</option>
-                            <option value="building-d">D Building</option>
-                            <option value="canteen">Canteen</option>
-                            <option value="library">Library</option>
-                            <option value="other-location">Other</option>
-                        </select>
-                    </p>
-
-                    <p>
-                        <label for="description">Problem Description (required)</label><br>
-                        <textarea id="description" name="description" rows="5" cols="50"
-                            placeholder="Explain what happened and where the problem can be found." required></textarea>
-                    </p>
-
-                    <p>
-                        <label for="solution">Suggested Solution (optional)</label><br>
-                        <textarea id="solution" name="solution" rows="3" cols="50"
-                            placeholder="If you have a suggestion, write it here."></textarea>
-                    </p>
-                </fieldset>
-
-                <p>
-                    <button type="submit">Submit Report</button>
-                    <button type="reset">Clear Form</button>
-                </p>
+                            <option>A Building</option>
+                            <option>B Building</option>
+                            <option>C Building</option>
+                            <option>D Building</option>
+                            <option>Canteen</option>
+                        </select></label></div>
+                <label>Description <b>*</b><textarea id="description"
+                        placeholder="Describe the problem in detail..."></textarea></label>
+                <label>Suggested Solution <span>(Optional)</span><textarea id="solution"
+                        placeholder="Any suggestions on how to fix this?"></textarea></label>
+                <div class="form-buttons"><button type="button" class="cancel-button"
+                        onclick="window.location.href='index.html'">Cancel</button><button type="submit"
+                        class="submit-button">➤ Submit Report</button></div>
             </form>
-
-            <p><strong>Note:</strong> This is a front-end demonstration. The form will not save or send a report until a
-                backend service is connected.</p>
-        </section>
+        </div>
     </main>
-    <center>
-        <hr>
-        <footer>
-            <p><a href="https://media.gifdb.com/spider-man-knitting-web-cljnw79qfpjh6gce.gif">🕸️🕷️🕸️</a>
-            </p>
-            <p>😊🤦‍♀️😊</p>
-            <p>&copy; 2026 Universal Student Support System</p>
-            <p>Student support made simpler.</p>
-        </footer>
-    </center>
+    <div id="message" class="message"></div>
+    <script src="script.js"></script>
 </body>
 
 </html>
