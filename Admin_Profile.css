@@ -1,0 +1,615 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f2f6fd;
+  color: #0f2a5e;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, p {
+  margin: 0;
+}
+
+button {
+  font-family: inherit;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.icon {
+  display: inline-block;
+  width: 32px;
+  font-size: 20px;
+}
+
+/* emoji used when an image file is missing */
+.fallback-img {
+  display: inline-block;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+/* ---------- 2. Sidebar ---------- */
+body > aside {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 280px;
+  background: #0f2f6b;
+  padding: 22px 14px 26px 14px;
+  display: flex;
+  flex-direction: column;
+  z-index: 20;
+}
+
+/* logo + title at the top of the sidebar */
+body > aside > a:first-child {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: white;
+  padding: 0 6px 30px 6px;
+}
+
+body > aside > a:first-child img {
+  width: 48px;
+  height: 48px;
+}
+
+body > aside > a:first-child .fallback-img {
+  color: white;
+}
+
+body > aside > a:first-child strong {
+  font-size: 18px;
+}
+
+body > aside nav {
+  flex: 1;
+}
+
+body > aside nav li {
+  margin-bottom: 6px;
+}
+
+body > aside nav a {
+  display: block;
+  padding: 14px 18px;
+  color: white;
+  border-radius: 8px;
+  font-size: 17px;
+}
+
+body > aside nav a:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+body > aside nav a[aria-current="page"] {
+  background: #1f6feb;
+}
+
+/* logout link at the bottom */
+body > aside > a:last-child {
+  display: block;
+  color: white;
+  font-size: 17px;
+  padding: 22px 4px 0 4px;
+  margin: 0 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* ---------- 3. Top bar ---------- */
+body > div {
+  margin-left: 280px;
+}
+
+body > div > header {
+  position: sticky;
+  top: 0;
+  height: 78px;
+  background: white;
+  border-bottom: 1px solid #e2eaf6;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  z-index: 10;
+}
+
+body > div > header > div {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+}
+
+body > div > header > div:last-child {
+  gap: 20px;
+}
+
+body > div > header > div:first-child img {
+  width: 32px;
+  height: 32px;
+}
+
+/* university drop-down in the top bar */
+#university {
+  border: none;
+  background: white;
+  font-size: 16px;
+  font-weight: bold;
+  color: #0f2a5e;
+  max-width: 380px;
+  cursor: pointer;
+}
+
+button[aria-label^="Notifications"] {
+  background: none;
+  border: none;
+  font-size: 26px;
+  position: relative;
+}
+
+.has-new::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 11px;
+  height: 11px;
+  background: red;
+  border-radius: 50%;
+}
+
+button[aria-label="Account menu"] {
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: bold;
+  color: #0f2a5e;
+}
+
+button[aria-label="Account menu"] img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+button[aria-label="Account menu"] .fallback-img {
+  background: #dbe9ff;
+  border-radius: 50%;
+  line-height: 40px;
+}
+
+.account-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 10px;
+  min-width: 170px;
+  background: white;
+  border: 1px solid #e2eaf6;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(15, 42, 94, 0.2);
+  padding: 8px;
+}
+
+.account-menu.open {
+  display: block;
+}
+
+.account-menu a {
+  display: block;
+  padding: 10px 12px;
+  border-radius: 6px;
+}
+
+.account-menu a:hover {
+  background: #eef4ff;
+}
+
+/* ---------- 4. Page content ---------- */
+main {
+  padding: 30px 32px 48px 32px;
+}
+
+/* title: "Admin Profile" */
+main > section:first-child {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+.page-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: #dbe9ff;
+  font-size: 34px;
+  text-align: center;
+  line-height: 72px;
+  flex-shrink: 0;
+}
+
+main > section:first-child h1 {
+  font-size: 34px;
+}
+
+main > section:first-child p {
+  color: #6b7fa3;
+  font-size: 17px;
+}
+
+/* two columns: profile card on the left, other cards on the right */
+main > div {
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  gap: 24px;
+  align-items: start;
+}
+
+main > div > div section,
+main > div > article {
+  background: white;
+  border: 1px solid #e2eaf6;
+  border-radius: 14px;
+  padding: 28px;
+}
+
+main > div > div section {
+  margin-bottom: 24px;
+}
+
+/* ---------- 5. Profile card (left) ---------- */
+article figure {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 18px auto;
+}
+
+article figure img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+article figure .fallback-img {
+  background: #dbe9ff;
+  border-radius: 50%;
+  line-height: 120px;
+}
+
+/* camera button on the photo */
+article figure button {
+  position: absolute;
+  right: -6px;
+  bottom: 2px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 3px solid white;
+  background: #1f6feb;
+  font-size: 14px;
+  padding: 0;
+}
+
+article h2 {
+  text-align: center;
+  font-size: 25px;
+}
+
+/* "Administrator" label */
+article > p {
+  width: fit-content;
+  margin: 10px auto 0 auto;
+  padding: 4px 16px;
+  border-radius: 20px;
+  background: #dbe9ff;
+  color: #1d4ed8;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+article hr {
+  border: none;
+  border-top: 1px solid #e2eaf6;
+  margin: 24px 0;
+}
+
+article dl {
+  margin: 0;
+  padding-left: 50px;
+}
+
+article dt {
+  position: relative;
+  font-weight: bold;
+}
+
+/* icon in front of each detail */
+article dt .icon {
+  position: absolute;
+  left: -50px;
+  top: 0;
+  font-size: 24px;
+}
+
+article dd {
+  margin: 2px 0 22px 0;
+  color: #46618f;
+  font-size: 17px;
+}
+
+/* Edit Profile button */
+article > a {
+  display: block;
+  text-align: center;
+  padding: 14px;
+  border: 1px solid #9cc0f7;
+  border-radius: 8px;
+  background: #f1f6ff;
+  color: #1f6feb;
+  font-weight: bold;
+}
+
+article > a:hover {
+  background: #e2edff;
+}
+
+/* ---------- 6. Right column ---------- */
+main > div > div section h2 {
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+.h-icon {
+  display: inline-block;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #dbe9ff;
+  text-align: center;
+  line-height: 44px;
+  font-size: 20px;
+  margin-right: 12px;
+}
+
+/* Quick actions list */
+main > div > div section:first-child li {
+  margin-bottom: 14px;
+}
+
+main > div > div section:first-child li a {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  column-gap: 16px;
+  align-items: center;
+  padding: 16px 20px;
+  border: 1px solid #e2eaf6;
+  border-radius: 10px;
+}
+
+main > div > div section:first-child li a:hover {
+  background: #f4f8ff;
+}
+
+main > div > div section:first-child li a .icon {
+  grid-row: 1 / 3;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  background: #eaf2ff;
+  border-radius: 10px;
+  font-size: 24px;
+}
+
+main > div > div section:first-child li a strong {
+  grid-column: 2;
+}
+
+main > div > div section:first-child li a span:not(.icon) {
+  grid-column: 2;
+  color: #6b7fa3;
+  font-size: 14px;
+}
+
+main > div > div section:first-child li a::after {
+  content: "\203A";
+  grid-column: 3;
+  grid-row: 1 / 3;
+  font-size: 28px;
+  color: #1f6feb;
+}
+
+/* About me */
+section[aria-labelledby="about-title"] > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 22px;
+  background: #f1f6fd;
+  border-radius: 12px;
+}
+
+section[aria-labelledby="about-title"] > div p {
+  color: #46618f;
+  line-height: 1.7;
+}
+
+section[aria-labelledby="about-title"] > a {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 24px;
+  border: 1px solid #1f6feb;
+  border-radius: 8px;
+  color: #1f6feb;
+  font-weight: bold;
+}
+
+section[aria-labelledby="about-title"] > a:hover {
+  background: #eaf2ff;
+}
+
+/* ---------- 7. Pop-up form and message ---------- */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 25, 60, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  z-index: 100;
+}
+
+.modal {
+  background: white;
+  width: 100%;
+  max-width: 460px;
+  border-radius: 14px;
+}
+
+.modal-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 24px;
+  border-bottom: 1px solid #e2eaf6;
+}
+
+.modal-x {
+  background: none;
+  border: none;
+  font-size: 28px;
+}
+
+.modal-body {
+  padding: 22px 24px;
+}
+
+.modal-body label {
+  display: block;
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.modal-body input[type="text"],
+.modal-body input[type="email"],
+.modal-body input[type="password"],
+.modal-body textarea {
+  display: block;
+  width: 100%;
+  margin-top: 6px;
+  padding: 11px;
+  border: 1px solid #c9d7ee;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 16px;
+}
+
+.modal-body textarea {
+  height: 110px;
+}
+
+.check-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #e2eaf6;
+}
+
+.form-error {
+  color: #d6204b;
+  font-size: 14px;
+  min-height: 20px;
+}
+
+.modal-foot {
+  text-align: right;
+  margin-top: 14px;
+}
+
+.btn-primary,
+.btn-ghost {
+  border: 1px solid #1f6feb;
+  border-radius: 8px;
+  padding: 10px 22px;
+  margin-left: 8px;
+}
+
+.btn-primary {
+  background: #1f6feb;
+  color: white;
+}
+
+.btn-ghost {
+  background: white;
+  color: #1f6feb;
+}
+
+.message {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  background: #0f2f6b;
+  color: white;
+  padding: 14px 22px;
+  border-radius: 10px;
+  z-index: 200;
+}
+
+/* ---------- 8. Small screens ---------- */
+@media (max-width: 1000px) {
+  main > div {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 800px) {
+  body > aside {
+    position: static;
+    width: 100%;
+  }
+  body > div {
+    margin-left: 0;
+  }
+  body > div > header {
+    position: static;
+    padding: 12px 16px;
+  }
+  #university {
+    max-width: 180px;
+  }
+  main {
+    padding: 20px 16px;
+  }
+}
